@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Email Automator",
+  "version": "1.0",
+  "description": "Automates email creation for job applications",
+  "permissions": ["activeTab", "scripting", "storage", "gmail"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
