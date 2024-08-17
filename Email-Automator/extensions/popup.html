@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Generator Extension</title>
+    <style>
+        /* Improved styling for extension popup with black background */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffffff, #000000);
+            margin: 0;
+            padding: 0;
+            width: 350px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #333; /* Darker border to match the theme */
+        }
+
+        h1 {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        label {
+            font-size: 15px;
+            color: #e0e0e0; /* Lighter gray for labels */
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 18px);
+            padding: 10px;
+            border: 1px solid #555; /* Darker border to match the theme */
+            border-radius: 6px;
+            font-size: 15px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            color: #ffffff;
+            background-color: #333; /* Dark background for input fields */
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group small {
+            display: block;
+            color: #999; /* Lighter gray for smaller text */
+            font-size: 13px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Generator</h1>
+        <form id="emailForm">
+            <div class="form-group">
+                <label for="email">Recruiter Email:</label>
+                <input type="email" id="email" name="email" required>
+                <small>Your email address will be used for sending the generated email.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="recruiter_name">Recruiter's Name:</label>
+                <input type="text" id="recruiter_name" name="recruiter_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="job_title">Job Title:</label>
+                <input type="text" id="job_title" name="job_title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company_name">Company Name:</label>
+                <input type="text" id="company_name" name="company_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="job_description">Job Description:</label>
+                <textarea id="job_description" name="job_description" required></textarea>
+                <small>Provide details of the job description to tailor your email.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+                <small>Optional: Where is the job located?</small>
+            </div>
+
+            <button type="submit">Generate Email</button>
+        </form>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

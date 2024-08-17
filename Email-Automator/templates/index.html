@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.02);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group small {
+            display: block;
+            color: #777;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customize Your Email</h1>
+        <form action="/generate-email" method="POST">
+            <div class="form-group">
+                <label for="email">Recruiter Email:</label>
+                <input type="email" id="email" name="email" required>
+                <small>Your email address will be used for sending the generated email.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="recruiter_name">Recruiter's Name:</label>
+                <input type="text" id="recruiter_name" name="recruiter_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="job_title">Job Title:</label>
+                <input type="text" id="job_title" name="job_title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company_name">Company Name:</label>
+                <input type="text" id="company_name" name="company_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="job_description">Job Description:</label>
+                <textarea id="job_description" name="job_description" required></textarea>
+                <small>Provide details of the job description to tailor your email.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+                <small>Optional: Where is the job located?</small>
+            </div>
+
+            <button type="submit">Generate Email</button>
+        </form>
+    </div>
+</body>
+</html>
