@@ -3,7 +3,7 @@
   "name": "Email Generator",
   "version": "1.0",
   "description": "Generate and send customized emails",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["tabs", "activeTab", "scripting", "storage"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
